@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_cart" author="a.khusainov.stc@innopolis.university">
+        <createTable tableName="cart">
+            <column name="cart_id" type="integer" autoIncrement="true" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="integer" >
+                <constraints foreignKeyName="cart_users_id_fk"  referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+            <column name="cart_is_empty" type="integer" remarks="0 - Корзина не пустая, 1 - Корзина пустая"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="cart"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

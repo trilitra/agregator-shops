@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_product_category" author="a.khusainov.stc@innopolis.university">
+        <createTable tableName="product_category">
+            <column name="product_category_id" type="integer" autoIncrement="true" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="category_id" type="integer">
+                <constraints foreignKeyName="product_category_category_id_fk"  referencedTableName="category" referencedColumnNames="category_id"/>
+            </column>
+            <column name="product_window_id" type="integer">
+                <constraints foreignKeyName="product_category_prod_win_id_fk"  referencedTableName="product_window" referencedColumnNames="product_window_id"/>
+            </column>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="product_category"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

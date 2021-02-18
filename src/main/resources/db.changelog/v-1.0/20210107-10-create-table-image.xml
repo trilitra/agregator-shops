@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_image" author="a.khusainov.stc@innopolis.university">
+        <createTable tableName="image">
+            <column name="image_id" type="integer" autoIncrement="true" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_id" type="integer">
+                <constraints foreignKeyName="image_product_id_fk"  referencedTableName="product" referencedColumnNames="product_id"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="description" type="varchar"/>
+            <column name="path" type="varchar"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="image"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

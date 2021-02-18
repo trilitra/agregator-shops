@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_cart_product_window" author="a.khusainov.stc@innopolis.university">
+        <createTable tableName="cart_product_window">
+            <column name="cart_product_window_id" type="integer" autoIncrement="true" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="cart_id" type="integer">
+                <constraints foreignKeyName="cart_prod_win_cart_id_fk"  referencedTableName="cart" referencedColumnNames="cart_id"/>
+            </column>
+            <column name="product_window_id" type="integer">
+                <constraints foreignKeyName="cart_prod_win_product_win_id_fk"  referencedTableName="product_window" referencedColumnNames="product_window_id"/>
+            </column>
+            <column name="quantity" type="integer"/>
+        </createTable>
+
+        <rollback>
+            <dropTable tableName="cart_product_window"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

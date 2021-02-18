@@ -1,0 +1,16 @@
+
+header {
+    color: darkgreen;
+}
+
+footer {
+    color: cornflowerblue;
+}
+
+.standard_table {
+    border: 1px solid black;
+}
+
+.user_container {
+    border-collapse: collapse;
+}

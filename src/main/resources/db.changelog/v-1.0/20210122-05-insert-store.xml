@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="insert-store-01" author="a.khusainov.stc@innopolis.university">
+        <sql>
+            insert into store (name, address)
+            values ('Пятерочка', 'я у этой Пятерочки'),
+                   ('Пятерочка', 'а я у этой Пятерочки'),
+                   ('Пятерочка', 'я у другой Пятерочки'),
+                   ('Ашан', 'я у Ашана'),
+                   ('Семья', 'я около Семьи'),
+                   ('Ашан', 'я возле Ашана');;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

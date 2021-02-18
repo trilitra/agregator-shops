@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="update-insert-users-01" author="Efanov">
+        <sql>
+            create extension if not exists pgcrypto;
+            insert into users (active, username, password, role_id, email, activationcode)
+            values ('true', 1, 1, 1, 'example@mail.ru', 1111);
+            update users set password = crypt(password, gen_salt('bf', 8));
+        </sql>
+    </changeSet>
+</databaseChangeLog>

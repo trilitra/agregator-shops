@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <springProfile name="default">
+        <logger name="com.example.app.controller" additivity="false">
+            <appender-ref ref="FILE"/>
+        </logger>
+        <logger name="com.example.app.service" additivity="false">
+            <appender-ref ref="FILE"/>
+        </logger>
+        <logger name="com.example.app.service.store" additivity="false">
+            <appender-ref ref="FILE"/>
+        </logger>
+    </springProfile>
+</configuration>

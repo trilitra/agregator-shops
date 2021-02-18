@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="02-changeset-users-table.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-01-create-table-order.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-02-create-table-cart.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-03-create-table-product_order.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-04-create-table-category.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-05-create-table-measure.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-06-create-table-store.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-07-create-table-product_window.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-08-create-table-product_category.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-09-create-table-product.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-09-create-table-productV2.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-10-create-table-image.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-11-create-table-cart_product_window.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-12-insert-roles.xml" relativeToChangelogFile="true"/>
+    <include file="20210107-13-insert-users.xml" relativeToChangelogFile="true"/>
+    <include file="20210122-01-add-column-measure.xml" relativeToChangelogFile="true"/>
+    <include file="20210122-02-insert-measure.xml" relativeToChangelogFile="true"/>
+    <include file="20210122-03-create-table-tag.xml" relativeToChangelogFile="true"/>
+    <include file="20210122-04-insert-tag.xml" relativeToChangelogFile="true"/>
+    <include file="20210122-05-insert-store.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

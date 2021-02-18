@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_table_product_order" author="a.khusainov.stc@innopolis.university">
+        <createTable tableName="product_order">
+            <column name="prod_ord_id" type="integer" autoIncrement="true" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="order_id" type="integer">
+                <constraints foreignKeyName="product_order_order_id_fk"  referencedTableName="order" referencedColumnNames="order_id"/>
+            </column>
+            <column name="product_id" type="integer" remarks="Код продукта, для возможности повторить заказ"/>
+            <column name="name" type="varchar"/>
+            <column name="description" type="varchar"/>
+            <column name="price" type="number"/>
+            <column name="meas_value" type="varchar"/>
+            <column name="quantity" type="number"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="product_order"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
